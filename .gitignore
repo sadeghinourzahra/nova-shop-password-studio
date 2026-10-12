@@ -1,0 +1,4 @@
+# Ignore system and IDE generated files
+.system_generated/
+*.log
+.agents/

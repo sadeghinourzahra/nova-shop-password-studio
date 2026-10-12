@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVA SHOP | Next-Gen Tech & Secure Password Studio</title>
+  <meta name="description" content="Discover premium tech gear and generate cryptographically secure passwords. 100% private, client-side, and minimal modern e-commerce experience.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%236366f1'/><path d='M30 70 L50 25 L70 70 L50 55 Z' fill='white'/></svg>">
+
+  <!-- Google Fonts: Inter for UI, JetBrains Mono for Passwords -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-light">
+  <!-- Dynamic Ambient Animated Background Canvas -->
+  <div class="ambient-background" aria-hidden="true">
+    <div class="aurora-orb orb-1"></div>
+    <div class="aurora-orb orb-2"></div>
+    <div class="aurora-orb orb-3"></div>
+    <canvas id="ambientCanvas" class="ambient-canvas"></canvas>
+  </div>
+
+  <!-- Announcement Top Bar -->
+  <aside class="announcement-bar">
+    <div class="container announcement-inner">
+      <span class="announcement-pill">Special Launch</span>
+      <p class="announcement-text">Shop premium gear with military-grade account protection. Free worldwide express shipping on orders over $50!</p>
+      <a href="#shop-section" class="announcement-link">Explore Products &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- Modern E-Commerce Header -->
+  <header class="main-navbar" id="mainNavbar">
+    <div class="container navbar-inner">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" aria-label="NOVA SHOP Home">
+        <div class="logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="brand-name">NOVA<span class="brand-accent">SHOP</span></span>
+          <span class="brand-tagline">Secure Tech & Gear</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#hero-section" class="nav-link active">Security Studio</a>
+        <a href="#shop-section" class="nav-link">Featured Gear</a>
+        <a href="#features-section" class="nav-link">Why NOVA</a>
+        <a href="#privacy-section" class="nav-link">Privacy</a>
+      </nav>
+
+      <!-- Header Action Buttons -->
+      <div class="header-actions">
+        <!-- Scroll to Password Tool Button -->
+        <a href="#generatorCard" class="btn-tool-shortcut">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <span>Password Tool</span>
+        </a>
+
+        <!-- Cart Button -->
+        <button class="cart-btn" id="cartToggleBtn" aria-label="Open Shopping Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Hero Section with Password Generator Spotlight -->
+  <main>
+    <section class="hero-section" id="hero-section">
+      <div class="container hero-grid">
+        
+        <!-- Left Column: Online Shop Presentation & Value Props -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span>NOVA Security & Account Suite</span>
+          </div>
+
+          <h1 class="hero-title">
+            Next-Gen Gear with <span class="gradient-text">Military-Grade</span> Security
+          </h1>
+
+          <p class="hero-desc">
+            Welcome to NOVA SHOP — the modern online store designed for security-conscious professionals. Create untrackable, crack-proof passwords for your customer account or checkout credentials right below.
+          </p>
+
+          <!-- Quick Benefits -->
+          <div class="hero-features-list">
+            <div class="hero-feat-item">
+              <span class="feat-icon">🛡️</span>
+              <div>
+                <strong>100% Client-Side Encryption</strong>
+                <p>Never sent to servers or stored in cookies</p>
+              </div>
+            </div>
+            <div class="hero-feat-item">
+              <span class="feat-icon">⚡</span>
+              <div>
+                <strong>One-Touch 8-Char Engine</strong>
+                <p>Instant digits, symbols and entropy analysis</p>
+              </div>
+            </div>
+            <div class="hero-feat-item">
+              <span class="feat-icon">📦</span>
+              <div>
+                <strong>Curated Cyber & Tech Gear</strong>
+                <p>Hand-picked hardware with global warranty</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-cta-group">
+            <a href="#shop-section" class="btn btn-primary-store">
+              <span>Explore Products</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#generatorCard" class="btn btn-secondary-store">
+              <span>Make Password Now</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: The Core Interactive Password Generator Card -->
+        <div class="hero-generator-wrapper">
+          <div class="generator-card" id="generatorCard">
+            
+            <!-- Card Header -->
+            <div class="gen-card-header">
+              <div class="security-shield-badge">
+                <svg class="shield-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span>Account Password Studio</span>
+              </div>
+              <h2 class="gen-card-title">Secure Password Generator</h2>
+              <p class="gen-card-subtitle">Create strong and secure passwords in seconds.</p>
+            </div>
+
+            <!-- Password Display Box -->
+            <div class="password-box-container">
+              <div class="password-input-bar" id="passwordInputBar">
+                <input 
+                  type="text" 
+                  id="passwordOutput" 
+                  class="password-output-field" 
+                  readonly 
+                  spellcheck="false" 
+                  autocomplete="off" 
+                  placeholder="Your password will appear here..."
+                  aria-label="Generated password output"
+                >
+                
+                <div class="bar-action-buttons">
+                  <!-- Visibility Toggle Button -->
+                  <button type="button" id="toggleVisibilityBtn" class="action-icon-btn" title="Toggle password visibility" aria-label="Toggle password visibility">
+                    <svg class="icon eye-icon" id="eyeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                  </button>
+
+                  <!-- Regenerate Button -->
+                  <button type="button" id="regenerateBtn" class="action-icon-btn" title="Regenerate password" aria-label="Regenerate password">
+                    <svg class="icon sync-icon" id="syncIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="23 4 23 10 17 10"></polyline>
+                      <polyline points="1 20 1 14 7 14"></polyline>
+                      <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                    </svg>
+                  </button>
+
+                  <!-- Copy Button -->
+                  <button type="button" id="copyBtn" class="copy-action-btn" title="Copy password to clipboard" aria-label="Copy password to clipboard">
+                    <svg class="icon copy-icon" id="copyIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span id="copyBtnText">Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Real-Time Password Strength Meter -->
+              <div class="strength-meter-row">
+                <div class="strength-meta">
+                  <span class="strength-meta-title">Security Strength:</span>
+                  <span class="strength-tag" id="strengthLabel">Strong</span>
+                </div>
+                <div class="strength-track">
+                  <div class="meter-bar" id="meterBar1"></div>
+                  <div class="meter-bar" id="meterBar2"></div>
+                  <div class="meter-bar" id="meterBar3"></div>
+                  <div class="meter-bar" id="meterBar4"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Password Configuration Options (Questions asked to user) -->
+            <div class="generator-controls">
+              
+              <!-- Length Slider (Default 8 Characters) -->
+              <div class="control-block">
+                <div class="control-header">
+                  <label for="lengthSlider" class="control-title">Password Length</label>
+                  <div class="length-pill-display">
+                    <span id="lengthValue">8</span>
+                    <span class="unit">characters</span>
+                  </div>
+                </div>
+                <div class="slider-track-wrap">
+                  <input 
+                    type="range" 
+                    id="lengthSlider" 
+                    class="custom-slider" 
+                    min="8" 
+                    max="32" 
+                    value="8" 
+                    step="1"
+                    aria-label="Select password length"
+                  >
+                </div>
+                <!-- Quick Preset Pills -->
+                <div class="quick-length-pills" id="presetPills">
+                  <button type="button" class="len-pill active" data-length="8">8 chars</button>
+                  <button type="button" class="len-pill" data-length="12">12 chars</button>
+                  <button type="button" class="len-pill" data-length="16">16 chars</button>
+                  <button type="button" class="len-pill" data-length="24">24 chars</button>
+                  <button type="button" class="len-pill" data-length="32">32 chars</button>
+                </div>
+              </div>
+
+              <!-- Character Set Questions (Checkboxes) -->
+              <div class="control-block">
+                <span class="control-title group-title">Include Character Types:</span>
+                <div class="options-grid">
+                  
+                  <!-- Question 1: Do you want numbers? -->
+                  <label class="toggle-card" for="optNumbers">
+                    <input type="checkbox" id="optNumbers" class="hidden-chk" checked>
+                    <span class="toggle-card-box">
+                      <span class="chk-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                      <span class="chk-text">
+                        <strong class="title">Include Numbers</strong>
+                        <span class="hint">Digits (0–9)</span>
+                      </span>
+                    </span>
+                  </label>
+
+                  <!-- Question 2: Do you want symbols? (?><{}[]!@#) -->
+                  <label class="toggle-card" for="optSymbols">
+                    <input type="checkbox" id="optSymbols" class="hidden-chk" checked>
+                    <span class="toggle-card-box">
+                      <span class="chk-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                      <span class="chk-text">
+                        <strong class="title">Include Symbols</strong>
+                        <span class="hint">Special (?&gt;&lt;{}[]!@#)</span>
+                      </span>
+                    </span>
+                  </label>
+
+                  <!-- Question 3: Do you want digits capital or bigger? (A-Z) -->
+                  <label class="toggle-card" for="optUppercase">
+                    <input type="checkbox" id="optUppercase" class="hidden-chk" checked>
+                    <span class="toggle-card-box">
+                      <span class="chk-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                      <span class="chk-text">
+                        <strong class="title">Include Uppercase</strong>
+                        <span class="hint">Capital Letters (A–Z)</span>
+                      </span>
+                    </span>
+                  </label>
+
+                  <!-- Question 4: Do you want lowercase? (a-z) -->
+                  <label class="toggle-card" for="optLowercase">
+                    <input type="checkbox" id="optLowercase" class="hidden-chk" checked>
+                    <span class="toggle-card-box">
+                      <span class="chk-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </span>
+                      <span class="chk-text">
+                        <strong class="title">Include Lowercase</strong>
+                        <span class="hint">Small Letters (a–z)</span>
+                      </span>
+                    </span>
+                  </label>
+                  
+                </div>
+              </div>
+
+              <!-- Prominent Touch Button: "buttme tathe tuch make password" -->
+              <button type="button" id="generateBtn" class="btn-touch-make-pass">
+                <svg class="touch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                <span>Generate Password</span>
+              </button>
+
+              <!-- Dynamic Notification & Error Alert Box -->
+              <div id="statusAlert" class="status-alert" role="alert" aria-live="polite">
+                <div class="alert-icon-box" id="alertIconBox"></div>
+                <div class="alert-content-box">
+                  <span id="alertMessageText" class="alert-text"></span>
+                  <!-- Retry button if error occurs: "seid error or try again" -->
+                  <button type="button" id="retrySelectionBtn" class="btn-retry-action" style="display:none;">
+                    🔄 Try Again & Restore Options
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Card Footer -->
+            <div class="gen-card-footer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <span>Your privacy matters. Passwords are generated locally in your browser.</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Online Shop Featured Products Section -->
+    <section class="shop-section" id="shop-section">
+      <div class="container">
+        
+        <div class="section-header">
+          <div class="section-tag">Curated Store Catalog</div>
+          <h2 class="section-title">Trending Tech & Hardware Gear</h2>
+          <p class="section-subtitle">Premium equipment backed by verified authentic hardware certificates and secure checkout.</p>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsGrid">
+          <!-- Dynamically populated or rendered items -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Why NOVA Shop Features Section -->
+    <section class="features-section" id="features-section">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3>Express Global Delivery</h3>
+            <p>Direct door-to-door insured air shipping with real-time GPS parcel tracking across 80+ countries.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>Certified Hardware Vault</h3>
+            <p>Every product is cryptographically inspected to guarantee zero tamper and authentic factory firmware.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💎</div>
+            <h3>30-Day Money Back Guarantee</h3>
+            <p>Not 100% satisfied? Return your product within 30 days for an instant, no-questions-asked refund.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Zero-Knowledge Account Security</h3>
+            <p>Use our integrated generator to protect your credentials with uncrackable Shannon entropy standards.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy Banner -->
+    <section class="privacy-banner-section" id="privacy-section">
+      <div class="container privacy-card">
+        <div class="privacy-lead">
+          <div class="privacy-lock-bubble">🔐</div>
+          <div>
+            <h3>Enterprise Privacy Commitment</h3>
+            <p>All passwords generated above are processed purely via <code>window.crypto.getRandomValues()</code> inside your device memory. Nothing touches the network.</p>
+          </div>
+        </div>
+        <a href="#generatorCard" class="btn btn-outline-white">Create Credentials Now</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Slide-Over Shopping Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart">
+    <div class="cart-drawer-header">
+      <div class="cart-title-wrap">
+        <h3>Your Shopping Cart</h3>
+        <span class="cart-count-pill" id="drawerCartCount">0 items</span>
+      </div>
+      <button class="cart-close-btn" id="closeCartBtn" aria-label="Close Shopping Cart">&times;</button>
+    </div>
+
+    <div class="cart-drawer-body" id="cartItemsList">
+      <div class="cart-empty-message" id="cartEmptyState">
+        <span class="empty-icon">🛍️</span>
+        <p>Your shopping cart is currently empty.</p>
+        <a href="#shop-section" class="btn btn-sm btn-primary-store" id="startShoppingBtn">Start Shopping</a>
+      </div>
+    </div>
+
+    <div class="cart-drawer-footer" id="cartDrawerFooter" style="display:none;">
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <strong id="cartSubtotalVal">$0.00</strong>
+      </div>
+      <button class="btn btn-checkout-primary" id="checkoutBtn">
+        Proceed to Secure Checkout
+      </button>
+      <span class="checkout-guarantee">🔒 Protected with 256-bit SSL encryption</span>
+    </div>
+  </aside>
+
+  <!-- Quick Floating Toast Notification -->
+  <div id="toastNotification" class="toast-box" role="status" aria-live="polite">
+    <svg class="toast-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span id="toastMessage">Password copied successfully!</span>
+  </div>
+
+  <!-- Store Footer -->
+  <footer class="store-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <div class="logo-mark small">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <strong>NOVA SHOP</strong>
+        <p>Premium Tech Hardware & Client-Side Privacy Tooling.</p>
+      </div>
+      <div class="footer-links-group">
+        <h4>Shop Catalog</h4>
+        <a href="#shop-section">Hardware Keys</a>
+        <a href="#shop-section">Audio & ANC Gear</a>
+        <a href="#shop-section">Mechanical Keyboards</a>
+        <a href="#shop-section">Encrypted Storage</a>
+      </div>
+      <div class="footer-links-group">
+        <h4>Security & Tools</h4>
+        <a href="#generatorCard">Password Studio</a>
+        <a href="#features-section">Shannon Entropy</a>
+        <a href="#privacy-section">Zero-Knowledge Policy</a>
+      </div>
+      <div class="footer-links-group">
+        <h4>Customer Care</h4>
+        <a href="#privacy-section">Order Tracking</a>
+        <a href="#features-section">Warranty Status</a>
+        <a href="#privacy-section">Support Desk</a>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>&copy; 2026 NOVA SHOP Inc. All rights reserved. Built with modern web standards.</p>
+      <div class="footer-seals">
+        <span>🛡️ 256-Bit Encrypted</span>
+        <span>⚡ Client-Side Only</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
